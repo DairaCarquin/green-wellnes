@@ -22,4 +22,10 @@ public class ProductServiceManager implements ProductService{
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
+
+    @Override
+    public Product getProductById(Long id) {
+        return productRepository.findById(id).orElse(null);
+    }
+
 }
